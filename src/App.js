@@ -13,7 +13,7 @@ function getExtension(filename) {
 
 
 async function authenticate(visitorImageName) {
-  const requestURL = 'https://zyhfdcb4z7.execute-api.ap-south-1.amazonaws.com/dev/student?' + new URLSearchParams({
+  const requestURL = 'https://prqky52jp8.execute-api.ap-south-1.amazonaws.com/dev/student?' + new URLSearchParams({
     objectKey: `${visitorImageName}.jpeg`,
   });
   return await fetch(requestURL, {
@@ -124,7 +124,7 @@ class App extends Component {
       const img_extension = getExtension(this.state.selectedFileStudent.name);
       const fileName = this.state.firstName + "_" + this.state.lastName + "." + img_extension;
       console.log(fileName);
-      fetch(`https://zyhfdcb4z7.execute-api.ap-south-1.amazonaws.com/dev/student-registered-images/${fileName}`, {
+      fetch(`https://prqky52jp8.execute-api.ap-south-1.amazonaws.com/dev/student-registered-images/${fileName}`, {
         method: 'PUT',
         headers: {
           'Content-Type': `image/${img_extension}`
@@ -144,7 +144,7 @@ class App extends Component {
   onAuthenticate = () => {
     const visitorImageName = uuid.v4();
     const img_extension = getExtension(this.state.selectedFile.name);
-    fetch(`https://zyhfdcb4z7.execute-api.ap-south-1.amazonaws.com/dev/visitor-authenticate-images/${visitorImageName}.jpeg`, {
+    fetch(`https://prqky52jp8.execute-api.ap-south-1.amazonaws.com/dev/visitor-authenticate-images/${visitorImageName}.jpeg`, {
       method: 'PUT',
       headers: {
         'Content-Type': `image/${img_extension}`
