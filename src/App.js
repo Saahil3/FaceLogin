@@ -13,7 +13,7 @@ function getExtension(filename) {
 
 
 async function authenticate(visitorImageName) {
-  const requestURL = 'https://zyhfdcb4z7.execute-api.ap-south-1.amazonaws.com/dev/student?' + new URLSearchParams({
+  const requestURL = 'https://prqky52jp8.execute-api.ap-south-1.amazonaws.com/dev/student?' + new URLSearchParams({
     objectKey: `${visitorImageName}.jpeg`,
   });
   return await fetch(requestURL, {
@@ -40,6 +40,7 @@ class App extends Component {
     uploadResultMessage: <h5>Please upload an image to authenticate</h5>,
     uploadAddStudentMessage: <h4>Click to add student to database</h4>,
     isAuth: false
+    
   }
   activateCamera = () => {
     this.setState({ cameraActive: true });
@@ -109,32 +110,41 @@ class App extends Component {
     });
   }
 
+  // onFileChangeStudent = event => {
+  //   this.setState({selectedFileStudent: event.target.files[0]});
+  // }
   onFileChangeStudent = event => {
-    this.setState({selectedFileStudent: event.target.files[0]});
+    this.setState({
+      selectedFileStudent: event.target.files[0]
+    });
   }
-
+  
   onFileUpload = () => {
-    const img_extension = getExtension(this.state.selectedFileStudent.name);
-    const fileName = this.state.firstName + "_" + this.state.lastName + "." + img_extension;
-    console.log(fileName);
-    fetch(`https://zyhfdcb4z7.execute-api.ap-south-1.amazonaws.com/dev/student-registered-images/${fileName}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': `image/${img_extension}`
-      },
-      body: this.state.selectedFileStudent
-    }).then(async () => {
-      this.onAddStudent();
-      this.setState({uploadAddStudentMessage: 'Successfully student added!'});
-    }).catch(error => {
-      console.error(error);
-    })
+    if (this.state.selectedFileStudent) { // Add a check to ensure selectedFileStudent is not null
+      const img_extension = getExtension(this.state.selectedFileStudent.name);
+      const fileName = this.state.firstName + "_" + this.state.lastName + "." + img_extension;
+      console.log(fileName);
+      fetch(`https://prqky52jp8.execute-api.ap-south-1.amazonaws.com/dev/student-registered-images/${fileName}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': `image/${img_extension}`
+        },
+        body: this.state.selectedFileStudent
+      }).then(async () => {
+        this.onAddStudent();
+        this.setState({uploadAddStudentMessage: 'Successfully student added!'});
+      }).catch(error => {
+        console.error(error);
+      })
+    } else {
+      console.error('No file selected for upload.'); // Log an error if no file is selected
+    }
   }
-
+  
   onAuthenticate = () => {
     const visitorImageName = uuid.v4();
     const img_extension = getExtension(this.state.selectedFile.name);
-    fetch(`https://zyhfdcb4z7.execute-api.ap-south-1.amazonaws.com/dev/visitor-authenticate-images/${visitorImageName}.jpeg`, {
+    fetch(`https://prqky52jp8.execute-api.ap-south-1.amazonaws.com/dev/visitor-authenticate-images/${visitorImageName}.jpeg`, {
       method: 'PUT',
       headers: {
         'Content-Type': `image/${img_extension}`
@@ -279,8 +289,10 @@ class App extends Component {
         )}
   
         <div>
+          
           {this.state.addingStudent ? (
             <><div>
+              
               <br />
               <h3>Student details:</h3>
               <label>
@@ -294,6 +306,12 @@ class App extends Component {
                 <label htmlFor="file-input" className="custom-file-input">Choose File</label>
                 <input type="file" name="image" id="file-input" accept="image/png, image/jpeg" onChange={this.onFileChangeStudent} />
             </div>
+            {this.state.selectedFileStudent && (
+          <div>
+            <h3>Selected Image</h3>
+            <img src={URL.createObjectURL(this.state.selectedFileStudent)} alt="Selected" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+          </div>
+        )}
             <div>
               <button onClick={this.onFileUpload}>
                 Add Student
@@ -310,6 +328,8 @@ class App extends Component {
               </button>
             </div>
           )}
+           
+
         </div>
   
         <div>{this.state.uploadAddStudentMessage}</div>
