@@ -1,70 +1,18 @@
-# Getting Started with Create React App
+<h1>FaceLogin</h1>
+<h3>Cloud Computing Project using AWS Services</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>About</h2>
+<p>It is a Face Recognition React App which is developed integrating various AWS Services such as S3, Lambda, DynamoDB, Rekognition, API Gateway, Amplify. It can recognise faces through images as well as live camera.</p>
 
-## Available Scripts
+<h2>AWS Services</h2>
+![AWS Services](https://github.com/Saahil3/FaceLogin/assets/97357456/2509655d-d7ca-4477-9af3-a8cf5b78e8db)
+![Services info](https://github.com/Saahil3/FaceLogin/assets/97357456/31ba9e5e-8f23-4c48-829b-5d9daa1af2d5)
 
-In the project directory, you can run:
+<h2>Architecture</h2>
+![Architecture](https://github.com/Saahil3/FaceLogin/assets/97357456/20d752b9-e26d-443e-a857-380430ec9f3e)
 
-### `npm start`
+<h2>Working</h2>
+![app](https://github.com/Saahil3/FaceLogin/assets/97357456/44921163-9491-4241-9d09-87a082437068)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h2>Referencees</h2>
+https://youtu.be/FsXyfxLDDIs?si=ih01jUzfPuaIAYrz
