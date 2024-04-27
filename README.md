@@ -5,7 +5,7 @@
 <p>It is a Face Recognition React App which is developed integrating various AWS Services such as S3, Lambda, DynamoDB, Rekognition, API Gateway, Amplify. It can recognise faces through images as well as live camera.</p>
 
 <h2>AWS Services</h2>
-[AWS Services](https://github.com/Saahil3/FaceLogin/assets/97357456/2509655d-d7ca-4477-9af3-a8cf5b78e8db)
+[AWS Services](https://github.com/Saahil3/FaceLogin/blob/master/AWS%20Services.png)
 [Services info](https://github.com/Saahil3/FaceLogin/assets/97357456/31ba9e5e-8f23-4c48-829b-5d9daa1af2d5)
 
 <h2>Architecture</h2>
